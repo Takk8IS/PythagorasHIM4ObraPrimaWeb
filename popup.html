@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PythagorasHIM™ for Obra Prima</title>
+        <meta name="author" content="Takk™ Innovate Studio" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary-color: #bf7245;
+                --secondary-color: #d9b471;
+                --black-color: #070707;
+                --white-color: #f2f2f2;
+                --disabled-color: #f2f2f2bf;
+                --button-color: #3a3a3c;
+                --background-color: #d9d9d9;
+                --text-color: #070707;
+                --font-size-xs: 0.75rem;
+                --font-size-sm: 0.875rem;
+                --font-size-md: 1rem;
+                --font-size-lg: 1.125rem;
+                --font-size-xl: 1.3125rem;
+                --font-size-2xl: 1.6rem;
+                --font-size-3xl: 2.652rem;
+                --font-size-4xl: 4rem;
+                --spacing-xs: 0.5rem;
+                --spacing-sm: 1.2rem;
+                --spacing-md: 1.5rem;
+                --spacing-lg: 2rem;
+                --spacing-xl: 3rem;
+            }
+
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --background-color: #d9d9d9;
+                    --text-color: #070707;
+                    --button-color: #bf7245;
+                }
+            }
+
+            html {
+                font-size: 62.5%;
+                font-synthesis: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family:
+                    "Inter",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    sans-serif;
+                background-color: var(--background-color);
+                color: var(--text-color);
+                margin: 0;
+                padding: var(--spacing-md);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                font-size: var(--font-size-md);
+            }
+
+            .container {
+                padding: var(--spacing-md);
+                width: 32rem;
+                max-width: 100%;
+                text-align: center;
+            }
+
+            @media (max-width: 1000px) {
+                .container {
+                    width: 37rem;
+                    max-width: 42rem;
+                }
+            }
+
+            .icon {
+                width: 17rem;
+                display: block;
+                margin: 0 auto var(--spacing-lg);
+            }
+
+            h1 {
+                font-size: var(--font-size-3xl);
+                font-weight: 600;
+                margin: var(--spacing-md) 0;
+                background: linear-gradient(
+                    45deg,
+                    var(--primary-color),
+                    var(--secondary-color)
+                );
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            #version {
+                color: var(--secondary-color);
+                font-size: var(--font-size-lg);
+                margin: var(--spacing-xs) 0;
+            }
+
+            #status {
+                font-size: var(--font-size-xl);
+                padding: var(--spacing-sm);
+                margin-bottom: var(--spacing-sm);
+                min-height: 0.25rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--disabled-color);
+                border-radius: 0.75rem;
+            }
+
+            .button-group {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-sm);
+                margin-bottom: var(--spacing-md);
+            }
+
+            .button {
+                width: 100%;
+                padding: var(--spacing-sm);
+                background-color: var(--primary-color);
+                color: var(--white-color);
+                border: none;
+                border-radius: 10px;
+                font-size: var(--font-size-2xl);
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .button:hover {
+                opacity: 0.9;
+            }
+
+            .button:disabled {
+                background-color: var(--disabled-color);
+                cursor: not-allowed;
+            }
+
+            #takk8is {
+                color: var(--secondary-color);
+                font-size: var(--font-size-lg);
+                margin: var(--spacing-md) 0 0;
+            }
+
+            a {
+                color: var(--primary-color);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: var(--secondary-color);
+            }
+
+            select {
+                width: 100%;
+                padding: var(--spacing-sm);
+                border-radius: 10px;
+                border: 1px solid var(--button-color);
+                font-size: var(--font-size-md);
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            #file-input,
+            #file-input-client,
+            #file-input-supplier {
+                display: none;
+            }
+
+            #upload-label {
+                display: inline-block;
+                padding: var(--spacing-sm);
+                background-color: var(--secondary-color);
+                color: var(--white-color);
+                border-radius: 10px;
+                font-size: var(--font-size-md);
+                cursor: pointer;
+                margin-bottom: var(--spacing-sm);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img
+                src="images/icon512.png"
+                alt="PythagorasHIM™ 4 Obra Prima"
+                class="icon"
+            />
+            <h1 id="project-title">PythagorasHIM™ for Obra Prima Web</h1>
+            <div id="version">Version 1.0.0</div>
+            <div id="status">Aguardando projeto...</div>
+            <div class="button-group">
+                <button
+                    id="generate-audit-purchase-orders-button"
+                    class="button"
+                >
+                    Auditar Ordens de Compras
+                </button>
+                <h2 id="client-list-header">
+                    Faça upload da sua lista de clientes, use a Razão Social,
+                    importar no formato CSV.
+                </h2>
+                <input type="file" id="file-input-client" accept=".csv" />
+                <button id="generate-list-button-client" class="button">
+                    Enviar lista de clientes
+                </button>
+                <select id="client-select"></select>
+                <h2 id="supplier-list-header">
+                    Faça upload da sua lista de fornecedores, use a Razão
+                    Social, importar no formato CSV.
+                </h2>
+                <input type="file" id="file-input-supplier" accept=".csv" />
+                <button id="generate-list-button-supplier" class="button">
+                    Enviar lista de fornecedores
+                </button>
+                <select id="supplier-select"></select>
+            </div>
+            <div id="takk8is">
+                Desenvolvido por
+                <a
+                    href="https://www.linkedin.com/in/hellodav/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Takk™ Innovate Studio
+                </a>
+            </div>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>

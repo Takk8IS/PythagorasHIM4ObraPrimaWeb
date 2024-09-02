@@ -1,0 +1,188 @@
+{
+  "name": "pythagorashim4obraprimaweb",
+  "version": "1.0.0",
+  "description": "Simplifies the auditing process by automating the search, selection, and validation of purchase orders on the Obra Prima platform.",
+  "author": {
+    "name": "David C Cavalcante",
+    "email": "davcavalcante@proton.me",
+    "organization": "Takk Innovate Studio",
+    "url": "https://takk.ag"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Takk8IS/PythagorasHIM4ObraPrimaWeb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Takk8IS/PythagorasHIM4ObraPrimaWeb/issues"
+  },
+  "homepage": "https://github.com/Takk8IS/PythagorasHIM4ObraPrimaWeb#readme",
+  "keywords": [
+    "obra-prima",
+    "obra-prima-web",
+    "ai",
+    "automation",
+    "chromium",
+    "scraper",
+    "scraping",
+    "pythagoras",
+    "pythagoras-him",
+    "davcavalcante",
+    "david-c-cavalcante",
+    "fjallstoppur",
+    "takk-innovate-studio",
+    "takk8is"
+  ],
+  "engines": {
+    "node": ">=20.x",
+    "npm": ">=9.x",
+    "chrome": ">=115",
+    "firefox": ">=110",
+    "edge": ">=100",
+    "safari": ">=16"
+  },
+  "type": "module",
+  "main": "background.js",
+  "preferGlobal": false,
+  "sideEffects": false,
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Takk8IS"
+  },
+  "contributors": [
+    {
+      "name": "Takk Innovate Studio",
+      "email": "say@takk.ag"
+    },
+    {
+      "name": "Fjallstoppur",
+      "email": "fjallstoppur@proton.me"
+    }
+  ],
+  "dependencies": {
+    "@google-ai/generativelanguage": "*",
+    "@notionhq/client": "*",
+    "axios": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "dotenv": "*",
+    "express": "*",
+    "googleapis": "*",
+    "groq-sdk": "*",
+    "node-cache": "*",
+    "node-cron": "*",
+    "typescript": "*",
+    "webextension-polyfill": "*"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "*",
+    "@types/chrome": "*",
+    "@types/express": "*",
+    "@types/node": "*",
+    "@types/node-cron": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "@vitejs/plugin-react": "*",
+    "@vue/reactivity": "*",
+    "babel-loader": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-import-resolver-typescript": "*",
+    "eslint-plugin-import": "*",
+    "jest": "*",
+    "nodemon": "*",
+    "prettier": "*",
+    "rimraf": "*",
+    "tailwindcss": "*",
+    "ts-node": "*",
+    "tsup": "*",
+    "vite": "*",
+    "vite-plugin-eslint": "*",
+    "vite-plugin-solid": "*",
+    "webpack": "*",
+    "webpack-bundle-analyzer": "*",
+    "webpack-cli": "*"
+  },
+  "scripts": {
+    "link-deps": "npm link @antfu/eslint-config @notionhq/client @types/chrome @types/express @types/node @types/node-cron @typescript-eslint/eslint-plugin @typescript-eslint/parser @vitejs/plugin-react @vue/reactivity axios babel-loader body-parser cors dotenv eslint eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import express groq-sdk jest nodemon node-cache node-cron prettier rimraf tailwindcss ts-node tsup typescript vite vite-plugin-eslint vite-plugin-solid webpack webpack-cli webextension-polyfill",
+    "postinstall": "npm run build",
+    "start": "node --no-deprecation PythagorasHIM4ObraPrimaWeb.js",
+    "dev": "nodemon --no-deprecation PythagorasHIM4ObraPrimaWeb.js",
+    "format": "prettier --write '**/*.{js,ts,json,css,scss,md}'",
+    "lint": "eslint . --ext .js,.ts --fix",
+    "test": "jest --coverage",
+    "analyze": "webpack --config webpack.config.js --analyze",
+    "build": "webpack --config webpack.config.js --mode production",
+    "prepare-release": "npm run lint && npm run test && npm run build",
+    "prepare:hooks": "husky install",
+    "build-extension": "mkdir -p package_extension && cp manifest.json background.js content.js popup.js popup.html AUTHORS.md FUNDING.yml LICENSE.md PRIVACY.md README.md package_extension/ && cp -r images package_extension/"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2022": true,
+      "webextensions": true
+    },
+    "extends": [
+      "@antfu/eslint-config",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2023,
+      "sourceType": "module"
+    },
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-console": "warn",
+      "no-unused-vars": "warn",
+      "strict": [
+        "error",
+        "global"
+      ]
+    }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ]
+  },
+  "browserslist": [
+    "Chrome >= 115",
+    "Firefox >= 110",
+    "Edge >= 100",
+    "Safari >= 16"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "davcavalcante@proton.me"
+    }
+  },
+  "manifest_version": 3
+}

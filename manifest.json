@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "PythagorasHIM™ for Obra Prima Takk8IS™",
+  "author": "David C Cavalcante",
+  "homepage_url": "https://github.com/Takk8IS",
+  "version": "1.0.0",
+  "description": "Simplifies the auditing process by automating the search, selection, and validation of purchase orders on the Obra Prima platform.",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "notifications",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://51.92.48.100.nip.io/*",
+    "https://*.google.com/*",
+    "https://*.groq.com/*",
+    "https://*.obraprimaweb.com.br/*",
+    "https://*.obraprima.eng/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "PythagorasHIM™ for Obra Prima Web",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "images/icon48.png",
+      "72": "images/icon72.png",
+      "96": "images/icon96.png",
+      "128": "images/icon128.png",
+      "144": "images/icon144.png",
+      "192": "images/icon192.png",
+      "512": "images/icon512.png",
+      "1024": "images/icon1024.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://51.92.48.100.nip.io/*",
+        "https://*.google.com/*",
+        "https://*.groq.com/*",
+        "https://*.obraprimaweb.com.br/*",
+        "https://*.obraprima.eng/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "images/icon48.png",
+    "72": "images/icon72.png",
+    "96": "images/icon96.png",
+    "128": "images/icon128.png",
+    "144": "images/icon144.png",
+    "192": "images/icon192.png",
+    "512": "images/icon512.png",
+    "1024": "images/icon1024.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
